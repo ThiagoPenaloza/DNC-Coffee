@@ -21,19 +21,25 @@ card.forEach(element => {
 });
 
 
-const openModalButton = document.querySelector("#openModal");
-const closeModalButton = document.querySelector("#closeModal");
-const modal = document.querySelector("#modal");
-const fade = document.querySelector("#fade");
 
-openModalButton.addEventListener('click', () => {
+const openModalButton1 = document.querySelector("#openModal");
+const openModalButton2 = document.querySelector("#openModal2");
+const closeModalButton1 = document.querySelector("#closeModal");
+const closeModalButton2 = document.querySelector("#closeModal2");
+const modal1 = document.querySelector("#modal");
+const modal2 = document.querySelector("#modal2");
+const fade = document.querySelector("#fade");
+const fade2 = document.querySelector("#fade2");
+
+
+const openModal = (modal, fade) => {
     modal.classList.add('hide', 'animate__animated', 'animate__fadeIn');
     fade.classList.add('hide', 'animate__animated', 'animate__fadeIn');
     modal.classList.remove('animate__fadeOut');
     fade.classList.remove('animate__fadeOut');
-})
+}
 
-closeModalButton.addEventListener('click', () => {
+const closeModal = (modal, fade) => {
     modal.classList.add('animate__animated', 'animate__fadeOut');
     fade.classList.add('animate__animated', 'animate__fadeOut');
     modal.classList.remove('animate__fadeIn');
@@ -42,4 +48,39 @@ closeModalButton.addEventListener('click', () => {
         modal.classList.remove('hide');
         fade.classList.remove('hide');
     }, 500);
+}
+
+
+openModalButton1.addEventListener('click', () => {
+    openModal(modal1, fade);
+});
+
+openModalButton2.addEventListener('click', () => {
+    openModal(modal2, fade2);
+});
+
+closeModalButton1.addEventListener('click', () => {
+    closeModal(modal1, fade);
+});
+
+closeModalButton2.addEventListener('click', () => {
+    closeModal(modal2, fade2);
 })
+
+// openModalButton1.addEventListener('click', () => {
+//     modal1.classList.add('hide', 'animate__animated', 'animate__fadeIn');
+//     fade.classList.add('hide', 'animate__animated', 'animate__fadeIn');
+//     modal1.classList.remove('animate__fadeOut');
+//     fade.classList.remove('animate__fadeOut');
+// })
+
+// closeModalButton1.addEventListener('click', () => {
+//     modal1.classList.add('animate__animated', 'animate__fadeOut');
+//     fade.classList.add('animate__animated', 'animate__fadeOut');
+//     modal1.classList.remove('animate__fadeIn');
+//     fade.classList.remove('animate__fadeIn');
+//     setTimeout(() => {
+//         modal.classList.remove('hide');
+//         fade.classList.remove('hide');
+//     }, 500);
+// })
